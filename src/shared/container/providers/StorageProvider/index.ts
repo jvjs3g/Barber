@@ -15,4 +15,3 @@ container.registerSingleton<IStorageProvider>(
   'StorageProvider',
   providers[uploadConfig.driver],
 )
-

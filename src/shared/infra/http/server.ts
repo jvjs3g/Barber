@@ -15,10 +15,10 @@ import '@shared/infra/typeorm';
 import '@shared/container';
 
 const app = express();
-app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
 app.use('/files',express.static(uploadConfig.uploadsFolder));// servir as pastas de moto statico para o usuario
+app.use(rateLimiter);
 app.use(routes);
 app.use(errors);
 app.use( (err:Error,request:Request,response:Response, _:NextFunction) =>{
